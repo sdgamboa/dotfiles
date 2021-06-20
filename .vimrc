@@ -10,9 +10,7 @@ autocmd! bufwritepost .vimrc source %
 filetype plugin on
 
 " Use pathogen to manage runtimepath
-execute pathogen#infect()
 syntax on
-filetype plugin indent on
 
 " Indentation settings
 set tabstop=4       " Tabs at the rigth position

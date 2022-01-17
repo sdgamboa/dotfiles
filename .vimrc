@@ -1,16 +1,19 @@
-" Settings ####################################################################
 
-" Enter the new millenium
 set nocompatible
+filetype plugin on
+syntax enable
+
+" Status bar settings
+set laststatus=2
+set ruler " show row and column positions in status bar
+
+" Dont wrap up lines
+set nowrap
+
+set number
 
 " Source the ~/.vimrc file when saving (:w)
 autocmd! bufwritepost .vimrc source %
-
-" Enable plug ins
-filetype plugin on
-
-" Use pathogen to manage runtimepath
-syntax on
 
 " Indentation settings
 set tabstop=4       " Tabs at the rigth position
@@ -21,31 +24,15 @@ set expandtab       " Use spaces instead of tab character
 set autoindent      " Turn on auto indent
 set smartindent     " Indents correcty (mostly)
 
-" Set number
-set number
-
-" Status bar settings
-set laststatus=2
-set ruler " show row and column positions in status bar
-
-" Enable syntax highlighting
-"syntax enable
-
 " use GUI colors
 if (has("termguicolors"))
  set termguicolors
 endif
 
 set t_Co=256 " Enable 256 colors
-colorscheme wombat256grf " molokai darktheme challenger_deep  Set color
+colorscheme challenger_deep " wombat256grf molokai darktheme challenger_deep molokai
 
-" Highlight end of file for coding for all files
-" set colorcolumn=80                                                              
-" hi ColorColumn guibg=#2c2d27 ctermbg=196
-
-" Highlight end of file for python files only (*.py)
-autocmd FileType python set colorcolumn=79
-"autocmd FileType python let &colorcolumn=join(range(80,999),",")
+set colorcolumn=80
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -53,10 +40,8 @@ let python_highlight_all = 1
 " highlight cursor line
 set cursorline 
 
-" jedi-vim ###################################
 " Don't show preview window on top when autocomplete with jedi for python code
 set completeopt-=preview
-" ############################################
 
 " netrw options
 let g:netrw_banner = 0 " Remove banner
@@ -80,31 +65,23 @@ set bs=2
 set splitbelow
 set splitright
 
-" Mappings ####################################################################
-
-" Easier navigation between panes, windows
+" Easier navigation between panes
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" I can only use h, j, k, and l to move in normal mode (great for training
-" your fingers
+" Only use h, j, k, and l to move in normal mode 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Save current markdown file as html (pandoc) and visualize it with dillo
-map <F2> :w!<CR> 
-    \ :execute "!pandoc -s --quiet --highlight-style breezedark -f markdown 
-    \ -t html -o " . expand('%:p:r') . ".html " . expand('%:p')<CR>
-    \ :execute "!dillo -f " . expand('%:p:r') . 
-    \ ".html > /dev/null 2> /dev/null&"<CR><CR>
+set relativenumber
 
-" Save current markdwon file as html (using pandoc)
-map <F3> :w!<CR>
-    \ :execute "!pandoc -s --quiet --highlight-style breezedark 
-    \ -f markdown -t html -o " . expand('%:p:r') . ".html 
-    \ " . expand('%:p')<CR><CR>
+map <F2> :set relativenumber!<CR>
+
+call plug#begin('~/.vim/plugged')
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+call plug#end()
 

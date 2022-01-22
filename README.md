@@ -5,4 +5,4 @@ For example:<br>
 
 `ln -sf ~/dotfiles/.vimrc ~/.vimrc` 
 
-Testint new ssh
+Testing new ssh

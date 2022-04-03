@@ -2,7 +2,7 @@
 
 ## New machine or installation
 
-+ Download this repository in your home directory
++ Download this repository to your home directory
 
 ```
 cd

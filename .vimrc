@@ -109,8 +109,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 map <F2> :set relativenumber!<CR>
 
-
-
 "call plug#begin('~/.vim/plugged')
 "Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 "call plug#end()

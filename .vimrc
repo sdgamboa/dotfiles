@@ -76,7 +76,7 @@ colorscheme PaperColor " PaperColor gruvbox molokai
 set colorcolumn=80
 
 " highlight cursor line
-"set cursorline 
+set cursorline 
 
 " ####################### Python ############################################
 

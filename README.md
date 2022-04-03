@@ -18,5 +18,6 @@ mv ~/dotfiles/.vimrc ~/.vimrc
 + Add symbolic link to keep the file updated when you edit your dotfile:
 
 ```
+## ln -sf <TARGET/REAL_FILE> <SYMLINK>
 ln -sf ~/dotfiles/.vimrc ~/.vimrc 
 ```

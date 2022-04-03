@@ -1,7 +1,25 @@
 
 set nocompatible
-filetype plugin on
-syntax enable
+
+" ################### Vundle ################################################
+
+filetype off 
+
+" set the runtime path to include vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'Vundlevim/vundle.vim'
+
+" Install papercolor-theme 
+Plugin 'NLKNguyen/papercolor-theme'
+
+" All Plugins must be added before the followin line
+call vundle#end()
+filetype plugin on " plugin indent on
+
+" ##################### Misc settings ###################################
 
 " Status bar settings
 set laststatus=2
@@ -9,7 +27,6 @@ set ruler " show row and column positions in status bar
 
 " Dont wrap up lines
 set nowrap
-
 set number
 
 " Source the ~/.vimrc file when saving (:w)
@@ -24,29 +41,7 @@ set expandtab       " Use spaces instead of tab character
 set autoindent      " Turn on auto indent
 set smartindent     " Indents correcty (mostly)
 
-" use GUI colors
-if (has("termguicolors"))
- set termguicolors
-endif
-
-set t_Co=256 " Enable 256 colors
-colorscheme challenger_deep " wombat256grf molokai darktheme challenger_deep molokai
-
-set colorcolumn=80
-
-" enable all Python syntax highlighting features
-let python_highlight_all = 1
-
-" highlight cursor line
-set cursorline 
-
-" Don't show preview window on top when autocomplete with jedi for python code
-set completeopt-=preview
-
-" netrw options
-let g:netrw_banner = 0 " Remove banner
-let g:netrw_liststyle = 1 "List with details.
-let g:netrw_browse_split = 0 " For tab, set 3
+set relativenumber
 
 " provides tab-completion for all file-related tasks
 set path+=**
@@ -65,6 +60,41 @@ set bs=2
 set splitbelow
 set splitright
 
+" ####################### Color settings ####################################
+
+syntax enable
+
+" use GUI colors
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+set t_Co=256 " Enable 256 colors
+set background=light
+colorscheme PaperColor " PaperColor gruvbox molokai
+
+set colorcolumn=80
+
+" highlight cursor line
+"set cursorline 
+
+" ####################### Python ############################################
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
+
+" Don't show preview window on top when autocomplete with jedi for python code
+set completeopt-=preview
+
+" ######################## netrw tree #######################################
+
+" netrw options
+let g:netrw_banner = 0 " Remove banner
+let g:netrw_liststyle = 1 "List with details.
+let g:netrw_browse_split = 0 " For tab, set 3
+
+" ############################ Mapping #####################################
+
 " Easier navigation between panes
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -77,11 +107,12 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-set relativenumber
-
 map <F2> :set relativenumber!<CR>
 
-call plug#begin('~/.vim/plugged')
-Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-call plug#end()
+
+
+"call plug#begin('~/.vim/plugged')
+"Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+"call plug#end()
+
 

@@ -1,8 +1,17 @@
 # Dotfiles
 
-I use symbolic lintks to keep my dotfiles up to date in this repository.<br>
-For example:<br>
+## New machine or installation
 
-`ln -sf ~/dotfiles/.vimrc ~/.vimrc` 
++ Download this repository in your home directory
 
-Testing new ssh
+    cd
+    git clone git@github.com:sdgamboa/dotfiles.git
+
++ Replace dot files if needed. For example:
+
+    mv ~/dotfiles/.vimrc ~/.vimrc
+
++ Add symbolic link to keep the file updated when you edit your dotfile
+
+    ln -sf ~/dotfiles/.vimrc ~/.vimrc 
+

@@ -5,19 +5,15 @@ set nocompatible
 
 filetype off 
 
-" set the runtime path to include vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle
 Plugin 'Vundlevim/vundle.vim'
-
-" Install papercolor-theme 
 Plugin 'NLKNguyen/papercolor-theme'
-
-" All Plugins must be added before the followin line
+Plugin 'sheerun/vim-polyglot'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
-filetype plugin on " plugin indent on
+
+filetype plugin on 
 
 " ##################### Misc settings ###################################
 
@@ -62,7 +58,7 @@ set splitright
 
 " ####################### Color settings ####################################
 
-syntax enable
+syntax on " enable
 
 " use GUI colors
 if (has("termguicolors"))
@@ -108,9 +104,4 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 map <F2> :set relativenumber!<CR>
-
-"call plug#begin('~/.vim/plugged')
-"Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-"call plug#end()
-
 

@@ -1,6 +1,9 @@
 # Dotfiles
 
-## New machine or installation
+In this repository, I keep a record of some of my dotfiles for easy access.
+
+## Download repo
+
 
 + Download this repository to your home directory:
 
@@ -8,16 +11,12 @@
 cd
 git clone git@github.com:sdgamboa/dotfiles.git
 ```
-
-+ Replace dotfiles if needed. For example:
+## Add .vimrc
 
 ```
+cd
 mv ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ```
 
-+ Add symbolic link to keep the file updated when you edit your dotfile:
 
-```
-## ln -sf <TARGET/REAL_FILE> <SYMLINK>
-ln -sf ~/dotfiles/.vimrc ~/.vimrc 
-```

@@ -5,12 +5,13 @@ set nocompatible
 
 filetype off 
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim " Path to vundle plugins
 call vundle#begin()
 Plugin 'Vundlevim/vundle.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'jalvesaq/Nvim-R'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 
 filetype plugin on 
@@ -21,12 +22,8 @@ filetype plugin on
 set laststatus=2
 set ruler " show row and column positions in status bar
 
-" Dont wrap up lines
+" Don't wrap up lines
 set nowrap
-set number
-
-" Source the ~/.vimrc file when saving (:w)
-autocmd! bufwritepost .vimrc source %
 
 " Indentation settings
 set tabstop=4       " Tabs at the rigth position
@@ -37,6 +34,7 @@ set expandtab       " Use spaces instead of tab character
 set autoindent      " Turn on auto indent
 set smartindent     " Indents correcty (mostly)
 
+set number
 set relativenumber
 
 " provides tab-completion for all file-related tasks
@@ -56,6 +54,9 @@ set bs=2
 set splitbelow
 set splitright
 
+" Source the ~/.vimrc file when saving (:w)
+autocmd! bufwritepost .vimrc source %
+
 " ####################### Color settings ####################################
 
 syntax on " enable
@@ -66,12 +67,13 @@ if (has("termguicolors"))
 endif
 
 set t_Co=256 " Enable 256 colors
-set background=light
-colorscheme PaperColor " PaperColor gruvbox molokai
+set background=dark
+colorscheme PaperColor 
 
 set colorcolumn=80
 
-" highlight cursor line
+" highlight cursor line (only numbers)
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline 
 
 " ####################### Python ############################################

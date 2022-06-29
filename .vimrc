@@ -73,7 +73,7 @@ colorscheme PaperColor
 set colorcolumn=80
 
 " highlight cursor line (only numbers)
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline 
 
 " ####################### Python ############################################
@@ -88,7 +88,7 @@ set completeopt-=preview
 
 " netrw options
 let g:netrw_banner = 0 " Remove banner
-let g:netrw_liststyle = 1 "List with details.
+let g:netrw_liststyle = 0 "List with details.
 let g:netrw_browse_split = 0 " For tab, set 3
 
 " ############################ Mapping #####################################

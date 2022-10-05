@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'Vundlevim/vundle.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sheerun/vim-polyglot'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 "Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 

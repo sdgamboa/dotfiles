@@ -11,6 +11,8 @@ Plugin 'Vundlevim/vundle.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'EdenEast/nightfox.nvim'
+" Plugin 'olimorris/onedarkpro.nvim'
 "Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 
@@ -35,7 +37,7 @@ set autoindent      " Turn on auto indent
 set smartindent     " Indents correcty (mostly)
 
 set number
-set relativenumber
+" set relativenumber
 
 " provides tab-completion for all file-related tasks
 set path+=**
@@ -67,8 +69,8 @@ if (has("termguicolors"))
 endif
 
 set t_Co=256 " Enable 256 colors
-set background=dark
-colorscheme PaperColor 
+" set background=dark
+colorscheme  PaperColor "hackerman " PaperColor 
 
 set colorcolumn=80
 

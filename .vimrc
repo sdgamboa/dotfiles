@@ -68,13 +68,15 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+highlight Cursor guibg=NONE guifg=NONE gui=reverse
+
 set t_Co=256 " Enable 256 colors
-" set background=dark
-colorscheme  PaperColor "hackerman " PaperColor 
+set background=dark
+colorscheme PaperColor " hackerman PaperColor 
 
 set colorcolumn=80
 
-" highlight cursor line (only numbers)
+" highlight cursor line  (only numbers)
 " highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline 
 
@@ -108,4 +110,26 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 map <F2> :set relativenumber!<CR>
+
+" Cursor settings
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[3 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+" augroup CursorSettings
+"    autocmd! 
+    " Alternative codes:
+    "  1 -> blinking block
+    "  2 -> solid block 
+    "  3 -> blinking underscore
+    "  4 -> solid underscore
+    "  5 -> blinking vertical bar
+    "  6 -> solid vertical bar
+     
+"    autocmd VimEnter * let &t_SI.="\e[5 q" "SI = INSERT mode
+"    autocmd VimEnter * let &t_SR.="\e[3 q" "SR = REPLACE mode
+"    autocmd VimEnter * let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+"    autocmd VimLeave * let &t_EI.="\e[1 q" | normal i
+" augroup END
 

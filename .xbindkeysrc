@@ -68,6 +68,8 @@
 "xte 'keydown Super_L' 'key D' 'keyup Super_L'"
     b:9+Release
 
+"xte 'keydown Super_L' 'key H' 'keyup Super_L'"
+    b:8+Release
 
 ##################################
 # End of xbindkeys configuration #

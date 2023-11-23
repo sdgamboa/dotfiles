@@ -112,9 +112,11 @@ nnoremap <Down> :echoe "Use j"<CR>
 map <F2> :set relativenumber!<CR>
 
 " Cursor settings
+autocmd VimEnter * silent !echo -ne "\e[1 q"
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+autocmd VimLeave * silent !echo -ne "\e[5 q"
 
 " augroup CursorSettings
 "    autocmd! 
